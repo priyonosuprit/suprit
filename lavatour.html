@@ -14,20 +14,21 @@
       --max-width:960px;
     }
     *{box-sizing:border-box}
-    body{font-family:"Segoe UI",Roboto,Arial,sans-serif;margin:0;background:#f6f9fb;color:#222;-webkit-font-smoothing:antialiased;}
+    body{font-family:"Segoe UI",Roboto,Arial,sans-serif;margin:0;background:#f6f9fb;color:#222;}
     .container{max-width:var(--max-width);margin:0 auto;padding:18px;}
 
-    /* header & banner */
     .topbar{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
     .back{text-decoration:none;color:var(--accent);font-weight:600;}
     h1{font-size:20px;margin:0;flex:1;text-align:center;}
+
+    /* Banner */
     .banner{width:100%;border-radius:12px;overflow:hidden;box-shadow:0 6px 22px rgba(20,40,80,0.08);margin-bottom:18px;position:relative;}
     .banner img{width:100%;height:260px;object-fit:cover;display:block}
-    .banner .overlay{position:absolute;left:0;right:0;bottom:0;padding:12px 18px;background:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,0.28));color:white;}
+    .banner .overlay{position:absolute;left:0;right:0;bottom:0;padding:12px 18px;background:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,0.3));color:white;}
     .banner .title{font-size:20px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,0.5);}
     .banner .subtitle{font-size:13px;opacity:.95;margin-top:4px}
 
-    /* cards */
+    /* Cards */
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;}
     .card{background:var(--card);border-radius:var(--radius);padding:14px;box-shadow:0 6px 18px rgba(30,60,100,0.06);display:flex;flex-direction:column;gap:10px;}
     .head{display:flex;gap:12px;align-items:center;}
@@ -35,15 +36,13 @@
     .thumb img{width:100%;height:100%;object-fit:cover;}
     .meta h3{margin:0;font-size:16px}
     .meta .price{margin-top:6px;font-weight:800;color:#0b8458;font-size:16px;}
-    .meta .dur{font-size:13px;color:var(--muted);margin-top:4px}
     .routes{font-size:14px;color:#333;line-height:1.5;margin-left:98px;}
     .routes ul{padding-left:18px;margin:6px 0}
     .actions{margin-top:auto;display:flex;gap:8px;align-items:center;justify-content:space-between;}
     .wa-btn{background:var(--green);color:white;padding:10px 12px;border-radius:10px;text-decoration:none;font-weight:700;cursor:pointer}
-
     .note{margin-top:18px;font-size:14px;color:var(--muted);background:#fff;padding:12px;border-radius:10px;}
 
-    /* modal form */
+    /* Modal */
     .modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.4);display:none;align-items:center;justify-content:center;z-index:99;}
     .modal{background:white;padding:20px;border-radius:14px;max-width:360px;width:90%;box-shadow:0 8px 30px rgba(0,0,0,.2);}
     .modal h2{margin-top:0;font-size:18px;text-align:center;margin-bottom:12px}
@@ -63,8 +62,9 @@
       <div style="width:34px"></div>
     </div>
 
+    <!-- Banner Jeep -->
     <div class="banner">
-      <img src="https://source.unsplash.com/1200x600/?jeep,volcano" alt="Banner">
+      <img src="https://images.unsplash.com/photo-1623625451156-1b1b20f2e1d3?auto=format&fit=crop&w=1200&q=80" alt="Jeep Lava Tour">
       <div class="overlay">
         <div class="title">Jeep Lava Tour Merapi</div>
         <div class="subtitle">Eksplorasi offroad ke museum, bunker, batu alien, sunrise spot.</div>
@@ -74,7 +74,7 @@
     <div class="grid">
       <article class="card">
         <div class="head">
-          <div class="thumb"><img src="https://source.unsplash.com/400x400/?jeep,offroad" alt=""></div>
+          <div class="thumb"><img src="https://images.unsplash.com/photo-1607083201790-2b38fcd8fcd1?auto=format&fit=crop&w=400&q=80" alt="Jeep Short Trip"></div>
           <div class="meta"><h3>Short Trip</h3><div class="price">Rp 400.000 / Jeep</div></div>
         </div>
         <div class="routes"><strong>Rute:</strong>
@@ -85,7 +85,7 @@
 
       <article class="card">
         <div class="head">
-          <div class="thumb"><img src="https://source.unsplash.com/400x400/?bunker,merapi" alt=""></div>
+          <div class="thumb"><img src="https://images.unsplash.com/photo-1558981359-219d6364c9a3?auto=format&fit=crop&w=400&q=80" alt="Jeep Medium Trip"></div>
           <div class="meta"><h3>Medium Trip</h3><div class="price">Rp 500.000 / Jeep</div></div>
         </div>
         <div class="routes"><strong>Rute:</strong>
@@ -96,7 +96,7 @@
 
       <article class="card">
         <div class="head">
-          <div class="thumb"><img src="https://source.unsplash.com/400x400/?sunrise,merapi" alt=""></div>
+          <div class="thumb"><img src="https://images.unsplash.com/photo-1558980394-0e53e97d17b4?auto=format&fit=crop&w=400&q=80" alt="Jeep Sunrise"></div>
           <div class="meta"><h3>Sunrise Trip</h3><div class="price">Rp 550.000 / Jeep</div></div>
         </div>
         <div class="routes"><strong>Rute:</strong>
@@ -107,7 +107,7 @@
 
       <article class="card">
         <div class="head">
-          <div class="thumb"><img src="https://source.unsplash.com/400x400/?lava,volcano" alt=""></div>
+          <div class="thumb"><img src="https://images.unsplash.com/photo-1598899134739-24b23b8d5c0a?auto=format&fit=crop&w=400&q=80" alt="Jeep Long Trip"></div>
           <div class="meta"><h3>Long Trip</h3><div class="price">Rp 600.000 / Jeep</div></div>
         </div>
         <div class="routes"><strong>Rute:</strong>
