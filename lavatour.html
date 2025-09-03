@@ -1,32 +1,167 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Detail Lava Tour</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lava Tour Jip Merapi — Detail Paket</title>
   <style>
-    body {font-family: Arial, sans-serif;margin: 0;background: #f5f5f5;padding: 20px;text-align: center;}
-    .card {background: white;border-radius: 12px;padding: 15px;max-width: 400px;margin: 0 auto;box-shadow: 0 2px 8px rgba(0,0,0,0.1);}
-    .card img {width: 100%;height: 200px;object-fit: cover;border-radius: 10px;margin-bottom: 10px;}
-    .price {font-size: 20px;color: #28a745;font-weight: bold;margin: 10px 0;}
-    .desc {font-size: 14px;color: #555;margin-bottom: 20px;}
-    .btn {display: inline-block;background: #25d366;color: white;padding: 10px 20px;border-radius: 8px;text-decoration: none;font-weight: bold;}
-    .btn:hover {background: #1ebe5d;}
-    .back {display: block;margin-top: 15px;color: #555;text-decoration: none;}
+    :root{
+      --accent:#1e88e5;
+      --green:#25D366;
+      --card:#ffffff;
+      --muted:#666;
+      --radius:14px;
+      --max-width:960px;
+    }
+    *{box-sizing:border-box}
+    body{font-family:"Segoe UI",Roboto,Arial,sans-serif;margin:0;background:#f6f9fb;color:#222;-webkit-font-smoothing:antialiased;}
+    .container{max-width:var(--max-width);margin:0 auto;padding:18px;}
+
+    /* header & banner */
+    .topbar{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+    .back{text-decoration:none;color:var(--accent);font-weight:600;}
+    h1{font-size:20px;margin:0;flex:1;text-align:center;}
+    .banner{width:100%;border-radius:12px;overflow:hidden;box-shadow:0 6px 22px rgba(20,40,80,0.08);margin-bottom:18px;position:relative;}
+    .banner img{width:100%;height:260px;object-fit:cover;display:block}
+    .banner .overlay{position:absolute;left:0;right:0;bottom:0;padding:12px 18px;background:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,0.28));color:white;}
+    .banner .title{font-size:20px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,0.5);}
+    .banner .subtitle{font-size:13px;opacity:.95;margin-top:4px}
+
+    /* cards */
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;}
+    .card{background:var(--card);border-radius:var(--radius);padding:14px;box-shadow:0 6px 18px rgba(30,60,100,0.06);display:flex;flex-direction:column;gap:10px;}
+    .head{display:flex;gap:12px;align-items:center;}
+    .thumb{width:86px;height:86px;border-radius:10px;overflow:hidden;flex:0 0 86px;}
+    .thumb img{width:100%;height:100%;object-fit:cover;}
+    .meta h3{margin:0;font-size:16px}
+    .meta .price{margin-top:6px;font-weight:800;color:#0b8458;font-size:16px;}
+    .meta .dur{font-size:13px;color:var(--muted);margin-top:4px}
+    .routes{font-size:14px;color:#333;line-height:1.5;margin-left:98px;}
+    .routes ul{padding-left:18px;margin:6px 0}
+    .actions{margin-top:auto;display:flex;gap:8px;align-items:center;justify-content:space-between;}
+    .wa-btn{background:var(--green);color:white;padding:10px 12px;border-radius:10px;text-decoration:none;font-weight:700;cursor:pointer}
+
+    .note{margin-top:18px;font-size:14px;color:var(--muted);background:#fff;padding:12px;border-radius:10px;}
+
+    /* modal form */
+    .modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.4);display:none;align-items:center;justify-content:center;z-index:99;}
+    .modal{background:white;padding:20px;border-radius:14px;max-width:360px;width:90%;box-shadow:0 8px 30px rgba(0,0,0,.2);}
+    .modal h2{margin-top:0;font-size:18px;text-align:center;margin-bottom:12px}
+    .modal label{display:block;margin-top:10px;font-weight:600;font-size:14px;text-align:left}
+    .modal input,.modal select,.modal textarea{width:100%;padding:8px;border:1px solid #ccc;border-radius:8px;margin-top:4px;font-size:14px;}
+    .modal .btn-row{display:flex;gap:8px;margin-top:14px;}
+    .btn-cancel,.btn-send{flex:1;padding:10px;border:none;border-radius:8px;font-weight:700;cursor:pointer;}
+    .btn-cancel{background:#ddd;}
+    .btn-send{background:var(--green);color:white;}
   </style>
 </head>
 <body>
+  <div class="container">
+    <div class="topbar">
+      <a class="back" href="index.html">← Kembali</a>
+      <h1>Lava Tour Jip Merapi</h1>
+      <div style="width:34px"></div>
+    </div>
 
-  <h1>Lava Tour Merapi</h1>
+    <div class="banner">
+      <img src="https://source.unsplash.com/1200x600/?jeep,volcano" alt="Banner">
+      <div class="overlay">
+        <div class="title">Jeep Lava Tour Merapi</div>
+        <div class="subtitle">Eksplorasi offroad ke museum, bunker, batu alien, sunrise spot.</div>
+      </div>
+    </div>
 
-  <div class="card">
-    <img src="https://picsum.photos/400/300?random=2" alt="Lava Tour">
-    <div class="price">Rp 500.000</div>
-    <p class="desc">Nikmati petualangan trekking yang memacu adrenalin, menjelajahi keindahan lereng Merapi.</p>
-    <a class="btn" href="https://wa.me/6281327525324?text=Halo%2C+saya+mau+pesan+paket+Lava Tour">Pesan via WhatsApp</a>
+    <div class="grid">
+      <article class="card">
+        <div class="head">
+          <div class="thumb"><img src="https://source.unsplash.com/400x400/?jeep,offroad" alt=""></div>
+          <div class="meta"><h3>Short Trip</h3><div class="price">Rp 400.000 / Jeep</div></div>
+        </div>
+        <div class="routes"><strong>Rute:</strong>
+          <ul><li>Museum Mini Sisa Hartaku</li><li>Batu Alien</li><li>Trek Air</li></ul>
+        </div>
+        <div class="actions"><button class="wa-btn" onclick="openForm('Short Trip','Rp 400.000')">Pesan via WhatsApp</button></div>
+      </article>
+
+      <article class="card">
+        <div class="head">
+          <div class="thumb"><img src="https://source.unsplash.com/400x400/?bunker,merapi" alt=""></div>
+          <div class="meta"><h3>Medium Trip</h3><div class="price">Rp 500.000 / Jeep</div></div>
+        </div>
+        <div class="routes"><strong>Rute:</strong>
+          <ul><li>Bunker Kaliadem</li><li>Batu Alien</li><li>Museum Mini</li><li>Trek Air</li></ul>
+        </div>
+        <div class="actions"><button class="wa-btn" onclick="openForm('Medium Trip','Rp 500.000')">Pesan via WhatsApp</button></div>
+      </article>
+
+      <article class="card">
+        <div class="head">
+          <div class="thumb"><img src="https://source.unsplash.com/400x400/?sunrise,merapi" alt=""></div>
+          <div class="meta"><h3>Sunrise Trip</h3><div class="price">Rp 550.000 / Jeep</div></div>
+        </div>
+        <div class="routes"><strong>Rute:</strong>
+          <ul><li>Bunker Kaliadem</li><li>Sunrise Spot</li><li>Museum Mini</li><li>Trek Air</li></ul>
+        </div>
+        <div class="actions"><button class="wa-btn" onclick="openForm('Sunrise Trip','Rp 550.000')">Pesan via WhatsApp</button></div>
+      </article>
+
+      <article class="card">
+        <div class="head">
+          <div class="thumb"><img src="https://source.unsplash.com/400x400/?lava,volcano" alt=""></div>
+          <div class="meta"><h3>Long Trip</h3><div class="price">Rp 600.000 / Jeep</div></div>
+        </div>
+        <div class="routes"><strong>Rute:</strong>
+          <ul><li>Petilasan Mbah Marijan</li><li>Bunker Kaliadem</li><li>Batu Alien</li><li>Museum Mini</li><li>Trek Air</li></ul>
+        </div>
+        <div class="actions"><button class="wa-btn" onclick="openForm('Long Trip','Rp 600.000')">Pesan via WhatsApp</button></div>
+      </article>
+    </div>
+
+    <div class="note"><strong>Catatan:</strong> Harga per jeep, kapasitas 3–4 orang. Klik pesan untuk isi data pemesanan.</div>
   </div>
 
-  <a class="back" href="index.html">← Kembali</a>
+  <!-- Modal Form -->
+  <div class="modal-bg" id="modal-bg">
+    <div class="modal">
+      <h2>Form Pemesanan</h2>
+      <label>Nama</label>
+      <input type="text" id="nama" placeholder="Isi nama anda">
+      <label>Jumlah Orang</label>
+      <input type="number" id="jumlah" min="1" placeholder="Contoh: 4">
+      <label>Metode Pembayaran</label>
+      <select id="pembayaran">
+        <option value="Cash">Cash</option>
+        <option value="Transfer">Transfer</option>
+        <option value="QRIS">QRIS</option>
+      </select>
+      <label>Catatan</label>
+      <textarea id="catatan" rows="2" placeholder="Opsional"></textarea>
+      <div class="btn-row">
+        <button class="btn-cancel" onclick="closeForm()">Batal</button>
+        <button class="btn-send" onclick="sendWA()">Kirim</button>
+      </div>
+    </div>
+  </div>
 
+  <script>
+    let selectedPackage='', selectedPrice='';
+    function openForm(pkg, price){
+      selectedPackage=pkg; selectedPrice=price;
+      document.getElementById('modal-bg').style.display='flex';
+    }
+    function closeForm(){
+      document.getElementById('modal-bg').style.display='none';
+    }
+    function sendWA(){
+      const nama=document.getElementById('nama').value;
+      const jumlah=document.getElementById('jumlah').value;
+      const bayar=document.getElementById('pembayaran').value;
+      const catatan=document.getElementById('catatan').value;
+      if(!nama||!jumlah){alert('Nama dan jumlah orang wajib diisi');return;}
+      const pesan=`Halo, saya ingin pesan ${selectedPackage} (${selectedPrice}).%0ANama: ${nama}%0AJumlah: ${jumlah} orang%0APembayaran: ${bayar}${catatan?`%0ACatatan: ${encodeURIComponent(catatan)}`:''}`;
+      window.open(`https://wa.me/6281327525324?text=${pesan}`,'_blank');
+      closeForm();
+    }
+  </script>
 </body>
 </html>
