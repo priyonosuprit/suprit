@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glamping Klangen</title>
+    <title>Glamping Klagon</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <header>
-        <h1>Glamping Klangen</h1>
+        <h1>Glamping Klagon</h1>
     </header>
 
     <nav>
@@ -24,25 +25,23 @@
     <div class="container">
         <div class="package-detail">
             <h2>Pilihan Paket Glamping</h2>
+            <img src="https://images.unsplash.com/photo-1533221375376-b52b27429d89?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Glamping Klagon" style="width:100%; max-width: 600px; height: auto; border-radius: 8px; margin-bottom: 25px;">
             <ul>
-                <li>**PAKET A**</li>
+                <li>**PAKET A (Rp 350.000)**</li>
                 <li>- Tenda glamping saja</li>
-                <li>- **Rp 350.000**</li>
             </ul>
             <ul>
-                <li>**PAKET B**</li>
+                <li>**PAKET B (Rp 510.000)**</li>
                 <li>- Tenda glamping, meja kursi, kasur, badcover</li>
-                <li>- **Rp 510.000**</li>
             </ul>
             <ul>
-                <li>**PAKET C**</li>
+                <li>**PAKET C (Rp 650.000)**</li>
                 <li>- Tenda glamping, meja kursi, kasur, alat masak, kasur+selimut, welcome drink</li>
-                <li>- **Rp 650.000**</li>
             </ul>
         </div>
 
         <div class="booking-form">
-            <h3>Formulir Pemesanan</h3>
+            <h3>Formulir Pemesanan Glamping</h3>
             <form id="bookingForm">
                 <label for="nama">Nama Lengkap:</label>
                 <input type="text" id="nama" name="nama" required>
@@ -50,13 +49,24 @@
                 <label for="jumlah">Jumlah Orang:</label>
                 <input type="number" id="jumlah" name="jumlah" min="1" required>
 
+                <label for="paket">Pilih Paket Glamping:</label>
+                <select id="paket" name="paket" required>
+                    <option value="">-- Pilih Paket --</option>
+                    <option value="Paket A (Rp 350.000)">Paket A (Rp 350.000)</option>
+                    <option value="Paket B (Rp 510.000)">Paket B (Rp 510.000)</option>
+                    <option value="Paket C (Rp 650.000)">Paket C (Rp 650.000)</option>
+                </select>
+
                 <label for="pembayaran">Metode Pembayaran:</label>
                 <select id="pembayaran" name="pembayaran">
                     <option value="Cash">Cash</option>
                     <option value="Transfer">Transfer</option>
                 </select>
 
-                <button type="submit">Pesan Sekarang</button>
+                <label for="permintaan_khusus">Permintaan Khusus (Opsional):</label>
+                <textarea id="permintaan_khusus" name="permintaan_khusus" rows="4" placeholder="Contoh: Butuh tenda dekat sungai, ulang tahun ke-25."></textarea>
+
+                <button type="submit">Pesan Sekarang via WhatsApp</button>
             </form>
         </div>
     </div>
@@ -67,9 +77,15 @@
 
             const nama = document.getElementById('nama').value;
             const jumlah = document.getElementById('jumlah').value;
+            const paket = document.getElementById('paket').value;
             const pembayaran = document.getElementById('pembayaran').value;
+            const permintaanKhusus = document.getElementById('permintaan_khusus').value;
 
-            const message = `Halo, saya ingin memesan paket Glamping.\n\nNama: ${nama}\nJumlah Orang: ${jumlah}\nMetode Pembayaran: ${pembayaran}`;
+            let message = `Halo, saya ingin memesan paket Glamping.\n\nNama: ${nama}\nJumlah Orang: ${jumlah}\nPaket: ${paket}\nMetode Pembayaran: ${pembayaran}`;
+            if (permintaanKhusus) {
+                message += `\nPermintaan Khusus: ${permintaanKhusus}`;
+            }
+
             const encodedMessage = encodeURIComponent(message);
             const phoneNumber = '6281327525324';
 
