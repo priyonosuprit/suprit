@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glamping Merapi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Glamping Merapi</h1>
+        <nav><a href="index.html">🏠 Kembali ke Beranda</a></nav>
+    </header>
+
+    <section class="hero" style="background-image: url('img/glamping-1.jpg');">
+        <div class="hero-text">
+            <h2>Nikmati Glamping dengan Pemandangan Merapi</h2>
+        </div>
+    </section>
+
+    <section class="content">
+        <h2>Fasilitas</h2>
+        <ul>
+            <li>Tenda eksklusif dengan meja & kursi</li>
+            <li>Kasur / Sleeping Bag</li>
+            <li>Dekat dengan spot foto Merapi</li>
+            <li>Lighting & perlengkapan makan</li>
+        </ul>
+
+        <h2>Foto</h2>
+        <div class="gallery">
+            <img src="img/glamping-1.jpg" alt="Tenda Glamping 1">
+            <img src="img/glamping-2.jpg" alt="Tenda Glamping 2">
+        </div>
+
+        <h2>Booking Sekarang</h2>
+        <form id="bookingForm">
+            <label>Nama:</label>
+            <input type="text" id="nama" required>
+
+            <label>Jumlah Orang:</label>
+            <input type="number" id="jumlah_orang" required min="1">
+
+            <label>Jumlah Tenda:</label>
+            <input type="number" id="jumlah_tenda" required min="1">
+
+            <label>Tanggal:</label>
+            <input type="date" id="tanggal" required>
+
+            <label>Jam:</label>
+            <input type="time" id="jam" required>
+
+            <label>Permintaan Khusus:</label>
+            <textarea id="permintaan"></textarea>
+
+            <label>Metode Pembayaran:</label>
+            <select id="metode">
+                <option value="Cash">Cash</option>
+                <option value="Transfer">Transfer Bank</option>
+                <option value="Dana">Dana</option>
+            </select>
+
+            <button type="button" onclick="sendBookingGlamping()">Kirim ke WhatsApp</button>
+        </form>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
