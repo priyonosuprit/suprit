@@ -1,45 +1,94 @@
-<div class="katalog-container">
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+}
 
-  <div class="paket-item">
-    <img src="gambar_lava_tour.jpg" alt="Jeep di jalur Lava Tour" class="gambar-paket">
-    <div class="info-paket">
-      <h3>Lava Tour Merapi</h3>
-      <p>Rasakan sensasi petualangan dengan jeep klasik menyusuri sisa-sisa letusan Merapi. Pilihan tepat untuk memacu adrenalin!</p>
-      <div class="paket-detail">
-        <p><strong>Durasi:</strong> 3 jam</p>
-        <p><strong>Fasilitas:</strong> Jeep 4x4, sopir, helm & masker</p>
-        <p><strong>Harga:</strong> Mulai dari Rp 350.000</p>
-      </div>
-      <a href="https://wa.me/6281327525324?text=Halo%2C%20saya%20tertarik%20dengan%20paket%20Lava%20Tour%20Merapi." class="tombol-pesan">Pesan Sekarang</a>
-    </div>
-  </div>
+.katalog-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
 
-  <div class="paket-item">
-    <img src="gambar_glamping.jpg" alt="Tenda glamping mewah dengan pemandangan" class="gambar-paket">
-    <div class="info-paket">
-      <h3>Glamping Merapi</h3>
-      <p>Nikmati kemewahan berkemah di alam terbuka dengan fasilitas lengkap. Suasana sejuk dan pemandangan gunung menjadi bonusnya.</p>
-      <div class="paket-detail">
-        <p><strong>Kapasitas:</strong> 2-4 orang</p>
-        <p><strong>Fasilitas:</strong> Tenda lengkap, toilet bersih, sarapan</p>
-        <p><strong>Harga:</strong> Mulai dari Rp 600.000</p>
-      </div>
-      <a href="https://wa.me/6281327525324?text=Halo%2C%20saya%20tertarik%20dengan%20paket%20Glamping%20Merapi." class="tombol-pesan">Pesan Sekarang</a>
-    </div>
-  </div>
+.paket-item {
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 350px;
+  width: 100%;
+}
 
-  <div class="paket-item">
-    <img src="gambar_trekking.jpg" alt="Trekking di jalur alam Merapi" class="gambar-paket">
-    <div class="info-paket">
-      <h3>Trekking Merapi</h3>
-      <p>Jelajahi keindahan Merapi dengan trekking santai di jalur-jalur favorit. Cocok untuk Anda yang ingin lebih dekat dengan alam.</p>
-      <div class="paket-detail">
-        <p><strong>Rute Favorit:</strong> Bukit **Klangon**</p>
-        <p><strong>Fasilitas:</strong> Pemandu lokal, air minum</p>
-        <p><strong>Harga:</strong> Mulai dari Rp 200.000</p>
-      </div>
-      <a href="https://wa.me/6281327525324?text=Halo%2C%20saya%20tertarik%20dengan%20paket%20Trekking%20Merapi." class="tombol-pesan">Pesan Sekarang</a>
-    </div>
-  </div>
+.paket-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
 
-</div>
+.gambar-paket {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.info-paket {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100% - 220px);
+}
+
+.info-paket h3 {
+  font-size: 1.5rem;
+  margin-top: 0;
+  color: #1a1a1a;
+}
+
+.info-paket p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+.paket-detail {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 12px;
+  margin-top: 15px;
+}
+
+.paket-detail p {
+  margin: 5px 0;
+  font-size: 0.85rem;
+}
+
+.tombol-pesan {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 12px;
+  background-color: #25D366;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  margin-top: 20px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.tombol-pesan:hover {
+  background-color: #128C7E; /* Warna yang lebih gelap saat dihover */
+}
+
+/* Penyesuaian untuk layar kecil (mobile) */
+@media (max-width: 768px) {
+  .katalog-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
